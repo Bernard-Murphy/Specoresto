@@ -27,7 +27,7 @@ class App extends React.Component{
 
   getGluten = async () => {
     /* If the user has not allowed the app to use their location, they will get an error */
-    if (locationAllowed === false){
+    if (this.state.locationAllowed === false){
       this.setState({
         ...this.state,
         fetching: false,
@@ -65,7 +65,7 @@ class App extends React.Component{
 
   getVegan = async () => {
     // This one is identical to getGluten, but with vegan restaurants instead.
-    if (locationAllowed === false){
+    if (this.state.locationAllowed === false){
       this.setState({
         ...this.state,
         fetching: false,
