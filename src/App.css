@@ -1,38 +1,346 @@
-.App {
-  text-align: center;
+@font-face{
+  font-family: Specoresto;
+  src: url('https://bernardmurphy.net/assets/my-happy-ending-font/happyending.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: url('https://bernardmurphy.net/assets/glutenfreeback.jpg');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#div-button-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 5% auto 0 auto;
+  width: 75%;
+  justify-content: space-evenly;
+}
+
+
+#button-gluten-free {
+  background: burlywood;
+  border: 2px solid brown;
+  width: 300px;
+  height: 100px;
+  cursor: pointer;
+  font-family: Raleway, 'Times New Roman', Times, serif;
+  font-size: 24px;
+}
+
+#button-gluten-free:hover {
+  color: dimgrey;
+  background: tan;
+  border: 2px solid burlywood;
+  transition: 0.25s;
+}
+
+#button-vegan {
+  background: mediumseagreen;
+  border: 2px solid seagreen;
+  width: 300px;
+  height: 100px;
+  cursor: pointer;
+  font-family: Raleway, 'Times New Roman', Times, serif;
+  font-size: 24px;
+}
+
+#button-vegan:hover {
+  color: dimgrey;
+  background: greenyellow;
+  border: 2px solid mediumseagreen;
+  transition: 0.25s;
+}
+
+.img-restaurant {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  margin: 15px;
+  border: 2px solid whitesmoke;
+}
+
+.img-rating {
+  /* width: 102px;
+  height: 18px; */
+  width: 142px;
+  height: 25px;
+  margin: 4px 0 0 8px;
+}
+
+.img-phone {
+  width: 25px;
+  height: 25px;
+}
+
+.div-restaurant {
+  display: flex;
+  background-image: url('https://bernardmurphy.net/assets/treeback3.jpg');
+  background-size: 100%;
+  border: 2px solid coral;
+  width: 95%;
+  margin: 15px auto;
+}
+
+.div-restaurant-info {
+  display: flex;
+}
+
+.div-phone-container {
+  display: flex;
+  margin-top: 15px;
+}
+
+.div-rating-top, .div-rating-bottom {
+  display: flex;
+}
+
+.div-rating-bottom {
+  margin-top: 10px;
+}
+
+.div-price-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.img-yelp {
+  width: 80px;
+  height: 49.444px;
+  margin: 8px 0 0 5px;
+}
+
+.h3-restaurant-name {
+  font-family: Poppins, Raleway, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 56px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.div-restaurant-address {
+  margin: 0 10px;
+}
+
+.p-restaurant-address {
+  font-family: Poppins, Raleway, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.p-phone {
+  margin-top: 0;
+  font-size: 24px;
+  font-family: Raleway, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: #fff;
+  line-height: 18px;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.div-info-2 {
+  margin-left: 20px;
+}
+
+.button-copy {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.div-rating-container {
+  margin-top: 15px;
+}
+
+.p-rating-word {
+  font-family: Poppins, Raleway, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
+}
+
+.p-rating-number {
+  font-family: Poppins, Raleway, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 22px;
+  color: #fff;
+}
+
+.p-price-word {
+  font-family: Poppins, Raleway, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 22px;
+  color: #fff;
+  margin-top: 0;
+}
+
+.p-price-signs {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 22px;
+  color: greenyellow;
+  margin-left: 10px;
+  margin-top: 0;
+}
+
+.div-info-1 {
+  max-width: 70%;
+}
+
+.button-copy:hover::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  background: black;
   color: white;
+  cursor: pointer;
+  z-index: 1;
+  transform: translateX(-20px) translateY(-45px);
+  padding: 5px;
+  border: 3px solid white;
 }
 
-.App-link {
-  color: #61dafb;
+.button-copy:hover::after {
+  position: absolute;
+  z-index: 1;
+  content: '';
+  transform: translateX(-55px) translateY(-15px);
+  border: 15px solid transparent;
+  border-top-color: white
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.hide {
+  display: none;
+}
+
+.p-fetching {
+  font-family: Poppins, Raleway, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 28px;
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.p-error {
+  font-family: Poppins, Raleway, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 28px;
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#h1-specoresto {
+  font-family: Specoresto, Raleway, 'Times New Roman', Times, serif;
+  font-size: 96px;
+  letter-spacing: 10px;
+  color: #fff;
+  text-align: center;
+  margin-top: 5%;
+}
+
+@media screen and (min-width: 1700px){
+  body {
+    background-size: 100% auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 1336px){
+  .h3-restaurant-name{
+    font-size: 42px;
+  }
+
+  .div-restaurant {
+    background-size: auto;
+  }
+}
+
+@media screen and (max-width: 1220px){
+  .h3-restaurant-name {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 1130px){
+  .div-info-1 {
+    max-width: 60%;
+  }
+}
+
+@media screen and (max-width: 1080px){
+  .div-restaurant-info{
+    flex-direction: column;
+  }
+  .div-info-1 {
+    max-width: max-content;
+  }
+  .h3-restaurant-name {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 975px){
+  #div-button-container {
+    width: 95%;
+  }
+
+  #button-gluten-free, #button-vegan {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 605px){
+  .div-restaurant{
+    flex-direction: column;
+  }
+
+  .h3-restaurant-name {
+    font-size: 38px;
+    text-align: center;
+  }
+
+  .img-restaurant {
+    margin: 15px auto;
+  }
+
+  .p-restaurant-address{
+    text-align: center;
+  }
+
+  .div-info-1 {
+    margin: 0 auto;
+  }
+
+  .div-phone-container, .div-rating-top, .div-rating-bottom, .div-price-container {
+    margin: 0 auto;
+    max-width: max-content;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .h3-restaurant-name {
+    font-size: 32px;
+  }
+
+  #h1-specoresto {
+    font-size: 48px;
+  }
+
+  #button-gluten-free, #button-vegan {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 350px){
+  #button-gluten-free, #button-vegan {
+    font-size: 12px;
+  }
+
+  .p-phone {
+    font-size: 16px;
   }
 }
